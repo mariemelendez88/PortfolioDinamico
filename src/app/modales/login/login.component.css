@@ -1,0 +1,11 @@
+.error{
+    color: #dc143c;
+}
+
+.invalido{
+    border-color: #dc143c;
+}
+
+.valido{
+    border-color: #14dc1e;
+}
