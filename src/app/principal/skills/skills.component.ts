@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoService } from 'src/app/servicios/info.service';
+import { SkillsService } from 'src/app/servicios/skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,12 +12,12 @@ export class SkillsComponent implements OnInit {
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private InfoService: InfoService,
+    private SkillsService: SkillsService,
     ) { }
 
   ngOnInit(): void {
     //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.InfoService.getDatos().subscribe(data => {
+    this.SkillsService.getSkills().subscribe(data => {
       console.log(data);
       //Definir info a mostrar
       this.skills = data.skills

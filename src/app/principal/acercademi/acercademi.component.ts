@@ -17,7 +17,7 @@ export class AcercademiComponent implements OnInit {
 
   ngOnInit(): void {
     //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.InfoService.getDatos().subscribe(data => {
+    this.InfoService.getInfo().subscribe(data => {
       console.log(data);
       //Definir info a mostrar
       this.persona = data.persona;

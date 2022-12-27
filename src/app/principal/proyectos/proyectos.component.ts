@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoService } from 'src/app/servicios/info.service';
+import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -12,12 +12,12 @@ export class ProyectosComponent implements OnInit {
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private InfoService: InfoService,
+    private ProyectosService: ProyectosService,
     ) { }
 
   ngOnInit(): void {
     //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.InfoService.getDatos().subscribe(data => {
+    this.ProyectosService.getProyectos().subscribe(data => {
       console.log(data);
       //Definir info a mostrar
       this.proyectos = data.proyectos;

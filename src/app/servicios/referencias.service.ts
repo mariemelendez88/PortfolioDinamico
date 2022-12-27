@@ -7,13 +7,13 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class InfoService {
+export class ReferenciasService {
   //El constructor se hace como private porque solo lo veo yo y el primer http se llama alias
   constructor(private http:HttpClient) { }
 
   //Método observable que devuelve los datos se puede usar getDatos o getMenu
-  getInfo():Observable<any>{
+  getReferencias():Observable<any>{
     //Se llama al JSON con su path o ruta, o bien, en su lugar se puede poner una URL para traer datos de un JSON online
-    return this.http.get('../assets/json/info.json');
+    return this.http.get('../assets/json/referencias.json');
   }
 }

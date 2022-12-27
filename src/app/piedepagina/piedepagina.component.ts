@@ -8,23 +8,19 @@ import { InfoService } from 'src/app/servicios/info.service';
 })
 export class PiedepaginaComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
-  footer: any=[];
-  nombre: string='';
-  apellido: string='';
+  persona: any=[];
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private InfoService: InfoService,
-    ) { }
+  ) {  }
 
   ngOnInit(): void {
     //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.InfoService.getDatos().subscribe(data => {
+    this.InfoService.getInfo().subscribe(data => {
       console.log(data);
       //Definir info a mostrar
-      this.footer = data.footer;
-      this.nombre = data.nombre;
-      this.apellido = data.apellido;
+      this.persona = data.persona;
     })
   }
 
