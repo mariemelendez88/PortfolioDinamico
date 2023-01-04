@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Persona } from 'src/app/entidades/persona';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  email = '';
+  password = '';
+  authService: any;
 
   //Inyectar en el constructor el formBuilder
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private autenticarService: AutenticacionService, private ruta: Router) {
     //Creamos el grupo de controles para el formulario de login
     this.form=this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
@@ -42,7 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   get PasswordValido(){
-    return !this.Password?.errors && this.Password?.touched
+    return !this.Password?.errors && this.Password?.touched;
   }
   
   limpiar() {
@@ -51,12 +57,20 @@ export class LoginComponent implements OnInit {
   }
 
   onEnviar(event: Event){
-    event?.preventDefault;
+    event.preventDefault;
+    //event?.preventDefault
 
     if (this.form.valid){
-      alert("Todo salió bien ¡¡Se envió formulario!!")
-      console.log("Se envió el formulario")
-    }
+      //Llamamos a nuestro servicio para enviar los datos al servidor
+      //Tambien podríamos ejecutar alguna lógica extra
+      let persona:Persona = new Persona("", "", "", "", "", "", "", "", "", "", this.form.get("email")?.value, this.form.get("password")?.value);
+      this.autenticarService.loginUser(persona).subscribe(data => {
+        console.log("DATA:" + JSON.stringify(data));
+        this.ruta.navigate(['/dashboard']);},
+        error => {
+          console.log(error);
+        })
+  }
     else{
       alert("Error, corregir para poder loguearse.")
       this.form.markAllAsTouched();

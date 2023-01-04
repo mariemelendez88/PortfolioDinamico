@@ -11,17 +11,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './modales/login/login.component';
 import { LogoutComponent } from './modales/logout/logout.component';
-import { RedesComponent } from './menu/redes/redes.component';
-import { AcercademiComponent } from './principal/acercademi/acercademi.component';
-import { ExperienciaComponent } from './principal/experiencia/experiencia.component';
-import { EstudiosComponent } from './principal/estudios/estudios.component';
-import { SkillsComponent } from './principal/skills/skills.component';
-import { ProyectosComponent } from './principal/proyectos/proyectos.component';
-import { ReferenciasComponent } from './principal/referencias/referencias.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BannerComponent } from './principal/banner/banner.component';
+import { RedesComponent } from './components/menu/redes/redes.component';
+import { AcercademiComponent } from './components/principal/acercademi/acercademi.component';
+import { ExperienciaComponent } from './components/principal/experiencia/experiencia.component';
+import { EstudiosComponent } from './components/principal/estudios/estudios.component';
+import { SkillsComponent } from './components/principal/skills/skills.component';
+import { ProyectosComponent } from './components/principal/proyectos/proyectos.component';
+import { ReferenciasComponent } from './components/principal/referencias/referencias.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PiedepaginaComponent } from './components/piedepagina/piedepagina.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BannerComponent } from './components/principal/banner/banner.component';
 import { DashAcercademiComponent } from './modales/dash-acercademi/dash-acercademi.component';
 import { DashBannerComponent } from './modales/dash-banner/dash-banner.component';
 import { DashEstudiosComponent } from './modales/dash-estudios/dash-estudios.component';
@@ -31,12 +31,12 @@ import { DashProyectosComponent } from './modales/dash-proyectos/dash-proyectos.
 import { DashSkillsComponent } from './modales/dash-skills/dash-skills.component';
 import { DashRedesComponent } from './modales/dash-redes/dash-redes.component';
 import { DashReferenciasComponent } from './modales/dash-referencias/dash-referencias.component';
-import { ErrorComponent } from './error/error.component';
-import { IndexComponent } from './index/index.component';
-import { NavbarDashboardComponent } from './navbar-dashboard/navbar-dashboard.component';
-import { LogoApComponent } from './menu/logo-ap/logo-ap.component';
-import { BotonLoginComponent } from './menu/boton-login/boton-login.component';
-import { BotonLogoutComponent } from './menu/boton-logout/boton-logout.component';
+import { ErrorComponent } from './components/error/error.component';
+import { IndexComponent } from './components/index/index.component';
+import { NavbarDashboardComponent } from './components/navbar-dashboard/navbar-dashboard.component';
+import { LogoApComponent } from './components/menu/logo-ap/logo-ap.component';
+import { BotonLoginComponent } from './components/menu/boton-login/boton-login.component';
+import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logout.component';
 
 @NgModule({
   declarations: [
